@@ -4,27 +4,91 @@
         <title>PETER PEPER PIZZA</title>
         <link rel="stylesheet" type="text/css" href="Pizzas-Estilos.css"/>
         <script>
-            function iniciarValores ()
+            function iniciarValores()
             {
+                document.getElementById('txtTipo').value='Tradicional';
                 document.getElementById('tamMed').checked=true;
                 document.getElementById('txtTama').value='Mediana';
+                document.getElementById('selMasa').selectIndex="0";
                 document.getElementById('txtMasa').value='Original';
+                document.getElementById('selQueso').selectIndex="0";
                 document.getElementById('txtQueso').value='Sin queso extra';
-                document.getElementById('txtTipo').value='Tradicional';
+                desmarcarIngredientes();
+                document.getElementById('pepperoni').checked=true;
+                document.getElementById('areaIngre2').value="Pepperoni ";
+                document.getElementById('txtPrecio').value="";
+                
             }
 
-            a = 0;
+            function desmarcarValores()
+            {
+                document.getElementById('pepperoni').checked=true;
+                document.getElementById('areaIngre2').value='pepperoni ';
+                document.getElementById('jamon').checked=false;
+                document.getElementById('tocino').checked=false;
+                document.getElementById('salchicha').checked=false;
+                document.getElementById('chorizo').checked=false;
+                document.getElementById('carne').checked=false;
+                document.getElementById('champinones').checked=false;
+                document.getElementById('pimiento').checked=false;
+                document.getElementById('cebolla').checked=false;
+                document.getElementById('aceitunas').checked=false;
+                document.getElementById('jalapeno').checked=false;
+                document.getElementById('tomate').checked=false;
+                document.getElementById('pina').checked=false;
+                document.getElementById('areaIngre2').value='pepperoni';
+            }
+
+            function contarIngredientes()
+            {
+                var numIngre = 0;
+                if (document.getElementById('pepperoni').checked==true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('jamon').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('tocino').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('salchicha').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('chorizo').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('carne').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('champinones').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('pimiento').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('cebolla').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('aceitunas').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('jalapeno').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('tomate').checked=true)
+                {   numIngre = numIngre + 1;    }
+                if (document.getElementById('pina').checked=true)
+                {   numIngre = numIngre + 1;    }
+                return numIngre - 1;
+            }
 
             function calcularPrecio()
             {
-                var price = document.getElementById('txtPrecio').value
-                var numbers = price.split(",");
-                var sum = 0;
-                for (var i = 0; i < numbers.length; i++) {
-                    sum += parseFloat(numbers[i]);
+                var tipo = document.getElementById('txtTipo').value;
+                var tama = document.getElementById('txtTama').value;
+                var masa = document.getElementById('txtMasa').value;
+                var queso = document.getElementById('txtQueso').value;
+                var ingre = document.getElementById('areaIngre2').value;
+                var numIngredientes = contarIngredientes(); 
+                var preTama = 0;
+                var preMasa = 0;
+                var preQueso = 0;
+                var preIngre = 0;
+                var preTotal = 0;
+                if (tipo == 'Tradicional')
+                {
+                    switch (tama);
                 }
-                document.getElementById('resultado').value = sum;
-
+                
             }
 
             
