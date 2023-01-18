@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PETER PEPER PIZZA</title>
+        <link rel="stylesheet" type="text/css" href="Pizzas-Estilos.css"/>
+        <script>
+            function iniciarValores ()
+            {
+                document.getElementById('tamMed').checked=true;
+                document.getElementById('txtTama').value='Mediana';
+                document.getElementById('txtMasa').value='Original';
+                document.getElementById('txtQueso').value='Sin queso extra';
+                document.getElementById('txtTipo').value='Tradicional';
+            }
+
+            a = 0;
+
+            function calcularPrecio()
+            {
+                var price = document.getElementById('txtPrecio').value
+                var numbers = price.split(",");
+                var sum = 0;
+                for (var i = 0; i < numbers.length; i++) {
+                    sum += parseFloat(numbers[i]);
+                }
+                document.getElementById('resultado').value = sum;
+
+            }
+
+            
+            window.onload = iniciarValores;
+        </script>
+    </head>
+    <body>
+        <div id = "principal">
+            <header>
+                <table>
+                    <tr>
+                        <td><img src ="Logo.png"/> </td>
+                        <td><h1>PIZZAS</h1>
+                        Nuestra masa se prepara diariamente<br/>
+                        Solo 100% aut&eacute;ntico queso mozzarella
+                        </td>
+                        <td><img src ="Logo.png"/>  </td>
+                    </tr>
+                </table>            
+            </header>
+            <main>
+                <form action="insertar.php" method="post">
+                <div id = "primaria">
+                    <div id = "secundaria">
+                        <div id = "terciaria">
+                            <section id = "tamano" class = "contenedor">
+                                <h4>Paso 1: Elige el "Tama&ntilde;o" para tu Pizza (1 Ingrediente)</h4> <hr>
+                                <fieldset>
+                                <table>     
+                                    <tr>
+                                        <td class="tabTama"><input type = "radio" id = "tamMed" name = "tamano" value = "1" onclick="document.getElementById('txtTama').value='Mediana',document.getElementById('txtPrecio').value=176 + ' '">
+                                        <label for = "tamMed">Mediana</label></td>                
+                                        <td class="tabTama"><input type = "radio" id = "tamGra" name = "tamano" value = "2" onclick="document.getElementById('txtTama').value='Grande',document.getElementById('txtPrecio').value=209 + ' '">
+                                        <label for = "tamGra">Grande</label></td>          
+                                        <td class="tabTama"><input type = "radio" id = "tamX-G" name = "tamano" value = "3" onclick="document.getElementById('txtTama').value='X-Grande',document.getElementById('txtPrecio').value=249+ ' '">
+                                        <label for = "tamX-G">X-Grande</label></td>              
+                                        <td class="tabTama" rowspan="3">
+                                        <img src="Pulgadas.png"></td>                               
+                                    </tr>
+                                    <tr>
+                                        <td class="tabTama">8 Rebanadas</td>
+                                        <td class="tabTama">8 Rebanadas</td>
+                                        <td class="tabTama">12 Rebanadas</td>                 
+                                    </tr>
+                                    <tr>
+                                        <td class="tabTama"> <span>$ 176</span></td>
+                                        <td class="tabTama"> <span>$ 209</span></td>
+                                        <td class="tabTama"> <span>$ 249</span></td>             
+                                    </tr>
+                                </table>
+                                </fieldset>
+                            </section>
+                            <section id = "masa" class = "contenedor">
+                                <h4>Paso 2: Elige la "Masa" para tu Pizza</h4><hr>  
+                                <fieldset>
+                                <table>
+                                    <tr>
+                                        <td class = "tabMasa" rowspan = "4">
+                                            <select id = "selMasa" name = "masa" size = "4" onclick="document.getElementById('txtMasa').value=document.getElementById('selMasa').value" ><option>Original</option>
+                                                <option>Ultra Delgada</option>
+                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 15 + ' ';">Pan</option>
+                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 30 + ' ';">XtraStuf</option>
+                                            </select>
+                                        </td>  
+                                        <td class = "tabMasa" rowspan = "4"></td>
+                                        <td class = "tabMasa" colspan = "2"> - Nuestra masa tradicional</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td class = "tabMasa" colspan = "2"> - Masa lijera y crujiente</td>    
+                                    </tr>
+                                    <tr>
+                                        <td class = "tabMasa" colspan = "2"> - Esponjosa y suavecita (+ $15)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class = "tabMasa" colspan = "2"> - Orilla rellena de queso mozzarella (+ $30)</td>
+                                    </tr>                                        
+                                </table> 
+                                </fieldset>
+                            </section>
+                            <section id = "queso" class = "contenedor">
+                                <h4>Paso 3: Elige el "Queso" extra para tu Pizza</h4><hr>
+                                <fieldset>
+                                <table>     
+                                    <tr>
+                                        <td class = "tabQueso" rowspan = "3">
+                                            <select id = "selQueso" name="queso" size = "4" onclick="document.getElementById('txtQueso').value=document.getElementById('selQueso').value">
+                                                <option>Sin Queso Extra</option>
+                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 23 + ' ';">Queso Mozzarella</option>
+                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 27 + ' ';">Queso Cheddar</option>
+                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 31 + ' ';">Queso Provolone</option>
+                                            </select>
+                                        </td>
+                                        <td class = "tabQueso"></td>
+                                        <td class = "tabQueso">Mediana</td>
+                                        <td class = "tabQueso">Grande</td>
+                                        <td class = "tabQueso">X-Grande</td>  
+                                    </tr>
+                                    <tr>                                        
+                                        <td class = "tabQueso">Queso</td>
+                                        <td class = "tabQueso"><span>$ 23</span></td>
+                                        <td class = "tabQueso"><span>$ 27</span></td>
+                                        <td class = "tabQueso"><span>$ 31</span></td>
+                                    </tr>                             <tr> 
+                                        <td class = "tabQueso">Ingrediente</td>
+                                        <td class = "tabQueso"><span>$ 20</span></td>
+                                        <td class = "tabQueso"><span>$ 23</span></td>
+                                        <td class = "tabQueso"><span>$ 26</span></td>
+                                    </tr>       
+                                </table>
+                                </fieldset>
+                            </section>
+                        </div>
+                        <section id = "extra" class = "contenedor">
+                            <h4>Paso 4: Elige los extra "Ingredientes" para tu Pizza</h4><hr>
+                            <fieldset>
+                            <table>
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "pepperoni" name = "pepperoni" value = "extra1" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'Pepperoni ';">
+                                        <label for = "pepperoni">Pepperoni</label>
+                                    </td>
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "jamon" name = "jamon" value = "extra2" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'jamon ';"> 
+                                        <label for = "jamon">Jam&oacute;n</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "tocino" name = "tocino" value = "extra3" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'tocino ';" > 
+                                        <label for = "tocino">Tocino</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "salchicha" name = "salchicha" value = "extra4" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'salchicha ';">
+                                        <label for = "salchicha">Salchicha</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "chorizo" name = "chorizo" value = "extra5" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'chorizo ';" >
+                                        <label for = "chorizo">Chorizo</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "carne" name = "carne" value = "extra6" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'carne ';" > 
+                                        <label for = "carne">Carne</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                         <input type = "checkbox" id = "champinones" name = "champinones" value = "extra7" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'champinones ';" > 
+                                        <label for = "champiñones">Champi&ntilde;ones</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                         <input type = "checkbox" id = "pimiento" name = "pimiento" value = "extra8" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'pimiento ';" > 
+                                        <label for = "pimiento">Pimiento</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                         <input type = "checkbox" id = "cebolla" name = "cebolla" value = "extra9" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'cebolla ';" > 
+                                        <label for = "cebolla">Cebolla</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "aceitunas" name = "aceitunas" value = "extra10" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'aceitunas ';" >
+                                        <label for = "aceitunas">Aceitunas</label>
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "jalapeno" name = "jalapeno" value = "extra11" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'jalapeno ';" > 
+                                        <label for = "jalapeño">Jalape&ntilde;o</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "tomate" name = "tomate" value = "extra12" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'tomate ';" > 
+                                        <label for = "tomate">Tomate</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabExtra">
+                                        <input type = "checkbox" id = "pina" name = "pina" value = "extra13" onclick="document.getElementById('areaIngre2').value=document.getElementById('areaIngre2').value + 'pina ';" > 
+                                        <label for = "piña">Pi&ntilde;a</label><br>
+                                    </td>
+                                </tr> 
+                                <tr><td><button type="button" onclick="document.getElementById('areaIngre2').value='', document.getElementById('pina').checked=false,document.getElementById('tomate').checked=false,document.getElementById('jalapeno').checked=false,
+                                document.getElementById('aceitunas').checked=false,document.getElementById('cebolla').checked=false,document.getElementById('pimiento').checked=false,document.getElementById('champinones').checked=false,document.getElementById('carne').checked=false,
+                                document.getElementById('chorizo').checked=false,document.getElementById('salchicha').checked=false,document.getElementById('tocino').checked=false,document.getElementById('jamon').checked=false,document.getElementById('pepperoni').checked=false">Borrar Ingredientes</button></td></tr>
+                            </table>
+                            </fieldset>
+                        </section>
+                    </div> 
+                    <section id = "especialidad" class = "contenedor">                        
+                        <h4>Especialidades - Ingredientes preseleccionados</h4><hr>
+                        <fieldset>
+                            <table>
+                                <tr>
+                                    <td class = "tabEspecial" rowspan = "2">
+                                        <select id = "selEspecial" name = "Especial" onclick="document.getElementById('areaIngre1').value=document.getElementById('selEspecial').value,
+                                        document.getElementById('areaIngre2').value=document.getElementById('selEspecial').value,document.getElementById('txtTipo').value=('Tradicional');">
+                                            <option value="pepperoni, chorizo, pimientos verdes. Sazonado con hierbas y especias ">Chicago</option>
+                                            <option value="champiñones, pimientos verdes, cebolla, aceitunas negras, rodajas de tomates. Y especias clásicas ">California</option>
+                                            <option value="mozzarella, queso cheddar y provolone, cubierto con pepperoni y especias ">New York</option>
+                                            <option value="pepperoni, champiñones, jamón, carne, pimineto verde, aceitunas negras, cebolla morada ">Werx</option>
+                                            <option value="salchicha, tocino, pepperoni, carne y jamón ">Suprema</option>
+                                        </select>
+                                    </td> 
+                                    <td class = "tabEspecial" rowspan = "2">
+                                        <textarea id="areaIngre1" name="areaIngre1" rows="2" cols="20" placeholder="Ingredientes"></textarea>
+                                    </td>
+                                    <td class = "tabEspecial">Mediana</td>   
+                                    <td class = "tabEspecial">Grande</td>
+                                    <td class = "tabEspecial">X-Grande</td>
+                                </tr>
+                                <tr>
+                                    <td class = "tabEspecial"><span>$ 210</span></td>
+                                    <td class = "tabEspecial"><span>$ 249</span></td>
+                                    <td class = "tabEspecial"><span>$ 295</span></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </section>
+                </div>
+                <section id = "verificacion" class = "contenedor">
+                    <h4>Verificar la Orden</h4><hr>
+                    <fieldset>
+                        <table>
+                            <tr>
+                                <td colspan = "2">
+                                    <img class="imagen" src="Paquete.png">
+                                </td>                                
+                            </tr>   
+                            <tr>
+                                <td class = "tabOrdenI">
+                                    <label class="lblDatos" for ="txtTipo">Pizza:</label>                         
+                                </td>
+                                <td class = "tabOrdenD">
+                                    <input type = "text" class="txtDatos" id = "txtTipo" name = "txtTipo" placeholder="Tipo">   
+                                </td>
+                            </tr>   
+                            <tr>
+                                <td class = "tabOrdenI">
+                                    <label class="lblDatos" for ="txtTipo">Tama&ntilde;o:</label>
+                                </td>
+                                <td class = "tabOrdenD">
+                                    <input type = "text" class="txtDatos" id = "txtTama" name = "txtTama" placeholder="Tamaño">   
+                                </td>
+                            </tr>   
+                            <tr>
+                                <td class = "tabOrdenI">
+                                    <label class="lblDatos" for ="txtTipo">Masa:</label>               
+                                </td>
+                                <td class = "tabOrdenD">
+                                    <input type = "text" class="txtDatos" id = "txtMasa" name = "txtMasa" placeholder="Masa">   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class = "tabOrdenI">
+                                    <label class="lblDatos" for="txtTipo">Queso:</label>               
+                                </td>
+                                <td class = "tabOrdenD">
+                                    <input type = "text" class="txtDatos" id = "txtQueso" name = "txtQueso" placeholder="Queso">   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class = "tabOrdenI" colspan = "2">
+                                    <label class="lblDatos" for="areaIngre2">Ingredientes:</label>
+                                </td>                                
+                            </tr>
+                            <tr>
+                                <td class = "tabOrdenD" colspan = "2">
+                                    <textarea id="areaIngre2" name="areaIngre2" rows="3" cols="18" placeholder="Ingredientes Seleccionados"></textarea>
+                                </td>                                
+                            </tr>
+                            <tr>
+                                <td class = "tabOrdenI" rowspan="2">
+                                    <label class="lblDatos">Precio:</label>    
+                                </td>
+                                <td class = "tabOrdenD" rowspan="2">
+                                    <input type = "text" class="txtDatos" id = "txtPrecio" name = "txtPrecio" placeholder="Precio">
+                                    <button onclick="calcularPrecio();">Sumar</button>
+                                    <input type = "text" class="resultado" id = "resultado" name = "resultado" placeholder="Resultado">     
+                                </td>
+                            </tr>   
+                            <tr></tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="submit" class="boton" id="enviar" value="Guardar"> 
+                                </td>                                
+                            </tr>   
+                            <tr>
+                                <td colspan="2">
+                                    <input type="reset" class="boton" id="borrar" value="Borrar">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan = "2">
+                                    <img class="imagen" src="Parrillada.png">
+                                </td>                                
+                            </tr> 
+                        </table>
+                    </fieldset>
+                </section>
+                </form>
+            </main>
+            <footer>
+            
+            </footer>
+        </div>        
+    </body>
+3=</html>
