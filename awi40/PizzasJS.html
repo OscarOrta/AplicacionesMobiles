@@ -44,29 +44,29 @@
                 var numIngre = 0;
                 if (document.getElementById('pepperoni').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('jamon').checked=true)
+                if (document.getElementById('jamon').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('tocino').checked=true)
+                if (document.getElementById('tocino').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('salchicha').checked=true)
+                if (document.getElementById('salchicha').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('chorizo').checked=true)
+                if (document.getElementById('chorizo').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('carne').checked=true)
+                if (document.getElementById('carne').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('champinones').checked=true)
+                if (document.getElementById('champinones').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('pimiento').checked=true)
+                if (document.getElementById('pimiento').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('cebolla').checked=true)
+                if (document.getElementById('cebolla').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('aceitunas').checked=true)
+                if (document.getElementById('aceitunas').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('jalapeno').checked=true)
+                if (document.getElementById('jalapeno').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('tomate').checked=true)
+                if (document.getElementById('tomate').checked==true)
                 {   numIngre = numIngre + 1;    }
-                if (document.getElementById('pina').checked=true)
+                if (document.getElementById('pina').checked==true)
                 {   numIngre = numIngre + 1;    }
                 return numIngre - 1;
             }
@@ -77,18 +77,56 @@
                 var tama = document.getElementById('txtTama').value;
                 var masa = document.getElementById('txtMasa').value;
                 var queso = document.getElementById('txtQueso').value;
-                var ingre = document.getElementById('areaIngre2').value;
                 var numIngredientes = contarIngredientes(); 
                 var preTama = 0;
                 var preMasa = 0;
                 var preQueso = 0;
                 var preIngre = 0;
                 var preTotal = 0;
+                var numIngredientes = contarIngredientes();
                 if (tipo == 'Tradicional')
                 {
-                    switch (tama);
+                    switch (tama)
+                    {
+                        case 'Mediana':
+                            preTama = 176;
+                            if (queso == "Queso Mozarrella" || queso == "Queso Cheddar" || queso == "Queso Provolone")
+                            {   preQueso = 23   }
+                            preIngre = numIngredientes * 20;
+                            break;
+                        case 'Grande':
+                            preTama = 209;
+                            if (queso == "Queso Mozarrella" || queso == "Queso Cheddar" || queso == "Queso Provolone")
+                            {   preQueso = 27   }
+                            preIngre = numIngredientes * 23;
+                            break;
+                        case 'X-Grande':
+                            preTama = 249;
+                            if (queso == "Queso Mozarrella" || queso == "Queso Cheddar" || queso == "Queso Provolone")
+                            {   preQueso = 31   }
+                            preIngre = numIngredientes * 26;
+                            break;
+                    }
+                    switch (masa)
+                    {
+                        case 'Original':
+                        case 'Ultra Delgada':
+                            preMasa = 0;
+                            break;
+                        case 'Pan':
+                            preMasa = 15;
+                            break;
+                        case 'XtraStuf':
+                            preMasa = 30;
+                            break;
+                    }
                 }
-                
+                else
+                {
+
+                }
+                preTotal = preTama + preMasa + preQueso + preIngre;
+                document.getElementById('txtPrecio').value = preTotal;
             }
 
             
@@ -119,11 +157,11 @@
                                 <fieldset>
                                 <table>     
                                     <tr>
-                                        <td class="tabTama"><input type = "radio" id = "tamMed" name = "tamano" value = "1" onclick="document.getElementById('txtTama').value='Mediana',document.getElementById('txtPrecio').value=176 + ' '">
+                                        <td class="tabTama"><input type = "radio" id = "tamMed" name = "tamano" value = "1" onclick="document.getElementById('txtTama').value='Mediana'">
                                         <label for = "tamMed">Mediana</label></td>                
-                                        <td class="tabTama"><input type = "radio" id = "tamGra" name = "tamano" value = "2" onclick="document.getElementById('txtTama').value='Grande',document.getElementById('txtPrecio').value=209 + ' '">
+                                        <td class="tabTama"><input type = "radio" id = "tamGra" name = "tamano" value = "2" onclick="document.getElementById('txtTama').value='Grande'">
                                         <label for = "tamGra">Grande</label></td>          
-                                        <td class="tabTama"><input type = "radio" id = "tamX-G" name = "tamano" value = "3" onclick="document.getElementById('txtTama').value='X-Grande',document.getElementById('txtPrecio').value=249+ ' '">
+                                        <td class="tabTama"><input type = "radio" id = "tamX-G" name = "tamano" value = "3" onclick="document.getElementById('txtTama').value='X-Grande'">
                                         <label for = "tamX-G">X-Grande</label></td>              
                                         <td class="tabTama" rowspan="3">
                                         <img src="Pulgadas.png"></td>                               
@@ -149,8 +187,8 @@
                                         <td class = "tabMasa" rowspan = "4">
                                             <select id = "selMasa" name = "masa" size = "4" onclick="document.getElementById('txtMasa').value=document.getElementById('selMasa').value" ><option>Original</option>
                                                 <option>Ultra Delgada</option>
-                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 15 + ' ';">Pan</option>
-                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 30 + ' ';">XtraStuf</option>
+                                                <option>Pan</option>
+                                                <option>XtraStuf</option>
                                             </select>
                                         </td>  
                                         <td class = "tabMasa" rowspan = "4"></td>
@@ -177,9 +215,9 @@
                                         <td class = "tabQueso" rowspan = "3">
                                             <select id = "selQueso" name="queso" size = "4" onclick="document.getElementById('txtQueso').value=document.getElementById('selQueso').value">
                                                 <option>Sin Queso Extra</option>
-                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 23 + ' ';">Queso Mozzarella</option>
-                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 27 + ' ';">Queso Cheddar</option>
-                                                <option onclick="document.getElementById('txtPrecio').value=document.getElementById('txtPrecio').value + 31 + ' ';">Queso Provolone</option>
+                                                <option>Queso Mozzarella</option>
+                                                <option>Queso Cheddar</option>
+                                                <option>Queso Provolone</option>
                                             </select>
                                         </td>
                                         <td class = "tabQueso"></td>
@@ -377,15 +415,23 @@
                                     <label class="lblDatos">Precio:</label>    
                                 </td>
                                 <td class = "tabOrdenD" rowspan="2">
-                                    <input type = "text" class="txtDatos" id = "txtPrecio" name = "txtPrecio" placeholder="Precio">
-                                    <button onclick="calcularPrecio();">Sumar</button>
-                                    <input type = "text" class="resultado" id = "resultado" name = "resultado" placeholder="Resultado">     
+                                    <input type = "text" class="txtDatos" id = "txtPrecio" name = "txtPrecio" placeholder="Precio">     
                                 </td>
                             </tr>   
                             <tr></tr>
                             <tr>
                                 <td colspan="2">
                                     <input type="submit" class="boton" id="enviar" value="Guardar"> 
+                                </td>                                
+                            </tr>  
+                            <tr>
+                                <td colspan="2">
+                                    <input  value="Calcular" class="boton" onclick="calcularPrecio()"> 
+                                </td>                                
+                            </tr>  
+                            <tr>
+                                <td colspan="2">
+                                    <input  value="Refrescar" class="boton" onclick="desmarcarValores()"> 
                                 </td>                                
                             </tr>   
                             <tr>
@@ -408,4 +454,4 @@
             </footer>
         </div>        
     </body>
-3=</html>
+</html>
