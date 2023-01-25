@@ -327,37 +327,39 @@
                             </table>
                             </fieldset>
                         </section>
-                    </div> 
-                    <section id = "especialidad" class = "contenedor">                        
-                        <h4>Especialidades - Ingredientes preseleccionados</h4><hr>
-                        <fieldset>
-                            <table>
-                                <tr>
-                                    <td class = "tabEspecial" rowspan = "2">
-                                        <select id = "selEspecial" name = "Especial" onclick="document.getElementById('areaIngre1').value=document.getElementById('selEspecial').value,
-                                        document.getElementById('areaIngre2').value=document.getElementById('selEspecial').value,document.getElementById('txtTipo').value=('Tradicional');">
-                                            <option value="pepperoni, chorizo, pimientos verdes. Sazonado con hierbas y especias ">Chicago</option>
-                                            <option value="champiñones, pimientos verdes, cebolla, aceitunas negras, rodajas de tomates. Y especias clásicas ">California</option>
-                                            <option value="mozzarella, queso cheddar y provolone, cubierto con pepperoni y especias ">New York</option>
-                                            <option value="pepperoni, champiñones, jamón, carne, pimineto verde, aceitunas negras, cebolla morada ">Werx</option>
-                                            <option value="salchicha, tocino, pepperoni, carne y jamón ">Suprema</option>
-                                        </select>
-                                    </td> 
-                                    <td class = "tabEspecial" rowspan = "2">
-                                        <textarea id="areaIngre1" name="areaIngre1" rows="2" cols="20" placeholder="Ingredientes"></textarea>
-                                    </td>
-                                    <td class = "tabEspecial">Mediana</td>   
-                                    <td class = "tabEspecial">Grande</td>
-                                    <td class = "tabEspecial">X-Grande</td>
-                                </tr>
-                                <tr>
-                                    <td class = "tabEspecial"><span>$ 210</span></td>
-                                    <td class = "tabEspecial"><span>$ 249</span></td>
-                                    <td class = "tabEspecial"><span>$ 295</span></td>
-                                </tr>
-                            </table>
-                        </fieldset>
-                    </section>
+                    </div>
+                    <div id="cuatro">
+                        <section id = "especialidad" class = "contenedor">                        
+                            <h4>Especialidades - Ingredientes preseleccionados</h4><hr>
+                            <fieldset>
+                                <table>
+                                    <tr>
+                                        <td class = "tabEspecial" rowspan = "2">
+                                            <select id = "selEspecial" name = "Especial" onclick="document.getElementById('areaIngre1').value=document.getElementById('selEspecial').value,
+                                            document.getElementById('areaIngre2').value=document.getElementById('selEspecial').value,document.getElementById('txtTipo').value=('Tradicional');">
+                                                <option value="pepperoni, chorizo, pimientos verdes. Sazonado con hierbas y especias ">Chicago</option>
+                                                <option value="champiñones, pimientos verdes, cebolla, aceitunas negras, rodajas de tomates. Y especias clásicas ">California</option>
+                                                <option value="mozzarella, queso cheddar y provolone, cubierto con pepperoni y especias ">New York</option>
+                                                <option value="pepperoni, champiñones, jamón, carne, pimineto verde, aceitunas negras, cebolla morada ">Werx</option>
+                                                <option value="salchicha, tocino, pepperoni, carne y jamón ">Suprema</option>
+                                            </select>
+                                        </td> 
+                                        <td class = "tabEspecial" rowspan = "2">
+                                            <textarea id="areaIngre1" name="areaIngre1" rows="2" cols="20" placeholder="Ingredientes"></textarea>
+                                        </td>
+                                        <td class = "tabEspecial">Mediana</td>   
+                                        <td class = "tabEspecial">Grande</td>
+                                        <td class = "tabEspecial">X-Grande</td>
+                                    </tr>
+                                    <tr>
+                                        <td class = "tabEspecial"><span>$ 210</span></td>
+                                        <td class = "tabEspecial"><span>$ 249</span></td>
+                                        <td class = "tabEspecial"><span>$ 295</span></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </section>
+                    </div>
                 </div>
                 <section id = "verificacion" class = "contenedor">
                     <h4>Verificar la Orden</h4><hr>
@@ -426,12 +428,12 @@
                             </tr>  
                             <tr>
                                 <td colspan="2">
-                                    <input  type="submit" value="Calcular" class="boton" onclick="calcularPrecio()"> 
+                                    <input  value="Calcular" class="boton" onclick="calcularPrecio()"> 
                                 </td>                                
                             </tr>  
                             <tr>
                                 <td colspan="2">
-                                    <input  type="submit" value="Refrescar" class="boton" onclick="desmarcarValores()"> 
+                                    <input  value="Refrescar" class="boton" onclick="desmarcarValores()"> 
                                 </td>                                
                             </tr>   
                             <tr>
