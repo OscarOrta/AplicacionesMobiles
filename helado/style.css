@@ -1,0 +1,73 @@
+* {
+    margin: 2px;
+    padding: 0px;
+} 
+html{
+    background: rgba(136,209,235,1);
+    background: -moz-linear-gradient(left, rgba(136,209,235,1) 0%, rgba(242,181,242,1) 84%, rgba(242,181,242,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(136,209,235,1)), color-stop(84%, rgba(242,181,242,1)), color-stop(100%, rgba(242,181,242,1)));
+    background: -webkit-linear-gradient(left, rgba(136,209,235,1) 0%, rgba(242,181,242,1) 84%, rgba(242,181,242,1) 100%);
+    background: -o-linear-gradient(left, rgba(136,209,235,1) 0%, rgba(242,181,242,1) 84%, rgba(242,181,242,1) 100%);
+    background: -ms-linear-gradient(left, rgba(136,209,235,1) 0%, rgba(242,181,242,1) 84%, rgba(242,181,242,1) 100%);
+    background: linear-gradient(to right, rgba(136,209,235,1) 0%, rgba(242,181,242,1) 84%, rgba(242,181,242,1) 100%);
+}
+.titulo{
+    text-align: center;
+    background-color: rgb(49, 38, 29);
+    border-radius: 10px;
+    border:5px solid rgb(235, 110, 208);
+    margin-bottom: 15px;
+}
+
+.helados{
+    margin: 7px;
+    padding:5px;
+    width: auto;
+    height: 500px;
+    background-image: url("fresh-waffle-cone-of-ice-cream-with-sprinkles.jpg");
+    border-radius: 10px;
+    
+}
+
+.paletas{
+    margin: 7px;
+    padding:5px;
+    width: auto;
+    height: auto;
+    background-color: pink;
+    border-radius: 10px;
+    
+}
+
+
+.nieves{
+ margin: 7px;
+    padding:5px;
+    width: auto;
+    height: auto;
+    background-color: rgb(96, 165, 142);
+    border-radius: 10px;
+    
+}
+
+.principal{
+    margin: 7px;
+    padding:5px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    border:5px solid rgb(255, 168, 7);
+    background-color: rgb(78, 196, 196);
+   
+}
+
+.cuenta{
+    padding:5px;
+    text-align: center;
+    width: auto;
+    height: auto;
+    background-color: rgb(133, 48, 104);
+    border-radius: 10px;
+    border:2px solid rgb(110, 139, 235);
+}
