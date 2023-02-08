@@ -5,26 +5,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
     <title>Helados Villeda</title>
 </head>
 <body>
     <div class="titulo">
         <img src="logo.png" id="menu-img" width="180px" height="120">
     </div>
+    <h2 class="yes">Menú</h2>
     <section class="principal">
         <div class="helados">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia quod quia ipsa aut molestias et blanditiis, maiores natus ab eius nesciunt velit alias laborum nihil, iste rerum ullam. Nemo, aut!
+            <br>
+            <h3>Helados</h3>
+            <br>
+            <p>Clásico sencillo ........$48 <input type="radio"> </p>
+            <p>Especial sencillo .......$67 <input type="radio"> </p>
+            <p>Clásico doble ..............$79  <input type="radio"> </p>
+            <p>Especial doble .........$113 <input type="radio"> </p>
+            <p>1/2 Litro Clásico .......$107<input type="radio"> </p>
+            <p>1/2 Especial ...........$126 <input type="radio"> </p>
+            <p>Litro Clásico ..........$194 <input type="radio"> </p>
+            <p>Litro Especial .........$229 <input type="radio"> </p>
+            <br>
+            <br>
+            <img src="kiki.png" width="300px" height="270">
         </div>
         <div class="paletas">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, facere eaque! Qui consequuntur officiis ratione minima cumque! Quibusdam minima voluptas optio itaque molestiae non, cum dolorum aliquid enim, ex ullam?
+            <br>
+            <h3>Paletas</h3>
+            <br>
+            <p>Especiales ...........$37 </p>
+                <select class="options">
+                    <option>Ate con queso</option>
+                    <option>Chocolate</option>
+                    <option>Chocolate con azúcar</option>
+                    <option>Mazapán</option>
+                </select> 
+            
+            <p>Crema de Leche .......$32</p>
+                <select class="options">
+                    <option>Yougurt con frutos rojos</option>
+                    <option>Fresa</option>
+                    <option>Nuez</option>
+                    <option>Menta con Chocolate</option>
+                </select>
+            <p>Agua .................$79</p>
+            
+                <select class="options">
+                    <option>Limón</option>
+                    <option>Chilimango</option>
+                    <option>Menta</option>
+                    <option>Tamachile</option>
+                </select> 
+            <br>
+            <br>
+            <img src="klipartz.com.png" width="180px" height="230">
         </div>
         <div class="nieves">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, autem? Voluptatum ab neque nemo. Laudantium animi, quas harum atque earum doloremque! Debitis aperiam voluptates non reiciendis, expedita molestias dolor sunt.
+            <br>
+            <h3>Bebidas calientes</h3>
+            <br>
+            <p>Espreso sencillo ........$34 <input type="radio"> </p>
+            <p>Espreso doble ...........$41 <input type="radio"> </p>
+            <p>Espreso cortado .........$35  <input type="radio"> </p>
+            <p>Americano 12 oz .........$34 <input type="radio"> </p>
+            <p>Americano 16 oz ..........$43<input type="radio"> </p>
+            <p>Chocolate mexicano ......$45 <input type="radio"> </p>
+            <p>Chocolate obscuro .......$56 <input type="radio"> </p>
+            <p>Té (Earl grey/verde) ....$34 <input type="radio"> </p>
+            <br>
+            <br>
+            <img src="pngwing.com.png" width="300px" height="270">
         </div>
     </section>
+    <h2 class="no">Cuenta</h2>
     <section class="secundaria">
         <div class="cuenta">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam dolor porro tempora doloremque! Praesentium, quibusdam atque facere eaque molestiae expedita reiciendis iure iusto amet, laborum vero alias itaque. Ducimus, minus.
+            <p>Helado <input class="panel" type="text"></p>
+            
+            <p>Paleta<input class="panel" type="text"></p>
+            
+            <p>Bebida <input class="panel" type="text"></p>
+            
+            <p>Total <input class="panel" type="text"></p>
+            <button type="submit">Cargar</button>
+            <button type="reset">Cancelar</button>
         </div>
     </section>
 </body>
